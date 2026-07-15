@@ -8,27 +8,66 @@ if (menuBtn && navLinksContainer) {
     });
 }
 
-// SPA Routing and Panel Transitions
+// SPA Routing and Panel Transitions (GSAP Powered)
 function navigateTo(hash) {
     const section = hash.replace("#", "") || "home";
     const panels = document.querySelectorAll(".panel");
     const links = document.querySelectorAll(".nav-link");
 
-    // Toggle active classes on panels
     let found = false;
+    let activePanel = null;
+
+    // Toggle active classes and reset inactive positions
     panels.forEach(panel => {
-        panel.classList.remove("active");
         if (panel.id === `${section}-panel`) {
             panel.classList.add("active");
-            panel.scrollTop = 0; // scroll back to top on entry
+            panel.scrollTop = 0;
+            activePanel = panel;
             found = true;
+        } else {
+            panel.classList.remove("active");
+            gsap.set(panel, { opacity: 0, y: 20, pointerEvents: "none" });
         }
     });
 
-    // If section not found, fallback to home
     if (!found) {
         const homePanel = document.getElementById("home-panel");
-        if (homePanel) homePanel.classList.add("active");
+        if (homePanel) {
+            homePanel.classList.add("active");
+            activePanel = homePanel;
+        }
+    }
+
+    // GSAP smooth slide-fade animation for active panel
+    if (activePanel) {
+        gsap.killTweensOf(activePanel);
+        gsap.fromTo(activePanel, 
+            { opacity: 0, y: 40, pointerEvents: "none" },
+            { opacity: 1, y: 0, pointerEvents: "all", duration: 0.65, ease: "power2.out" }
+        );
+
+        // Stagger animations inside specific active panels
+        if (section === "skills") {
+            gsap.fromTo("#skills-panel .skill-item",
+                { opacity: 0, scale: 0.85, y: 15 },
+                { opacity: 1, scale: 1, y: 0, duration: 0.5, stagger: 0.06, ease: "back.out(1.5)", delay: 0.15 }
+            );
+        } else if (section === "projects") {
+            gsap.fromTo("#projects-panel .project-item",
+                { opacity: 0, y: 35 },
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power2.out", delay: 0.15 }
+            );
+        } else if (section === "services") {
+            gsap.fromTo("#services-panel .service-item",
+                { opacity: 0, scale: 0.9, y: 20 },
+                { opacity: 1, scale: 1, y: 0, duration: 0.55, stagger: 0.08, ease: "power2.out", delay: 0.15 }
+            );
+        } else if (section === "about") {
+            gsap.fromTo("#about-panel .glass-card",
+                { opacity: 0, x: (i) => i === 0 ? -40 : 40 },
+                { opacity: 1, x: 0, duration: 0.7, ease: "power3.out", delay: 0.1 }
+            );
+        }
     }
 
     // Toggle active links in navbar

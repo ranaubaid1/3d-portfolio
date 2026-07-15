@@ -75,14 +75,14 @@ function init3DEngine() {
     scene.add(directionalLight);
 
     // Orbiting Spotlight Colors (casting dynamic metallic specular highlights on the robot)
-    const cyanLight = new THREE.PointLight(0x00f7ff, 7, 12);
+    const cyanLight = new THREE.PointLight(0x00f7ff, 7, 12); // Ice Blue accent
     scene.add(cyanLight);
 
-    const magentaLight = new THREE.PointLight(0xff00ff, 7, 12);
+    const magentaLight = new THREE.PointLight(0xa855f7, 7, 12); // Electric Violet primary
     scene.add(magentaLight);
 
     // Glowing Cyber Grid Helper
-    const gridHelper = new THREE.GridHelper(30, 30, 0x00f7ff, 0x1e293b);
+    const gridHelper = new THREE.GridHelper(30, 30, 0xa855f7, 0x1e293b);
     gridHelper.position.y = -2.2;
     scene.add(gridHelper);
 
@@ -96,7 +96,7 @@ function init3DEngine() {
     particlesGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     const particlesMaterial = new THREE.PointsMaterial({
         size: 0.06,
-        color: 0x00f7ff,
+        color: 0xa855f7,
         transparent: true,
         opacity: 0.7,
         blending: THREE.AdditiveBlending
@@ -122,7 +122,7 @@ function init3DEngine() {
 
     for (let i = 0; i < geoms.length; i++) {
         const material = new THREE.MeshBasicMaterial({
-            color: 0x00f7ff,
+            color: 0xa855f7,
             wireframe: true,
             transparent: true,
             opacity: 0.12
@@ -140,7 +140,7 @@ function init3DEngine() {
     
     for (let i = 0; i < maxSparks; i++) {
         const material = new THREE.MeshBasicMaterial({
-            color: 0x00f7ff,
+            color: 0xa855f7,
             transparent: true,
             opacity: 0,
             blending: THREE.AdditiveBlending

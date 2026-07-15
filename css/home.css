@@ -34,7 +34,7 @@
 
 .hero-content h2 {
   font-size: clamp(20px, 3.2vw, 32px);
-  color: #00f7ff;
+  color: var(--accent-color);
   margin: 10px 0 20px 0;
   min-height: 45px;
 }
@@ -54,12 +54,12 @@
 
 .btn {
   padding: 15px 35px;
-  background: #00f7ff;
-  color: #000;
+  background: var(--primary-color);
+  color: #fff;
   border-radius: 50px;
   font-weight: 600;
   transition: 0.3s;
-  box-shadow: 0 0 15px rgba(0, 247, 255, 0.4);
+  box-shadow: 0 0 15px var(--glow-primary);
   cursor: pointer;
   border: none;
   display: inline-block;
@@ -67,14 +67,14 @@
 
 .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #00f7ff;
+  box-shadow: 0 0 25px var(--primary-color);
 }
 
 .btn-outline {
   padding: 15px 35px;
-  border: 2px solid #00f7ff;
+  border: 2px solid var(--primary-color);
   border-radius: 50px;
-  color: #00f7ff;
+  color: var(--primary-color);
   font-weight: 600;
   transition: 0.3s;
   background: transparent;
@@ -83,8 +83,8 @@
 }
 
 .btn-outline:hover {
-  background: rgba(0, 247, 255, 0.1);
-  box-shadow: 0 0 15px rgba(0, 247, 255, 0.2);
+  background: rgba(168, 85, 247, 0.1);
+  box-shadow: 0 0 15px var(--glow-primary);
   transform: scale(1.05);
 }
 
@@ -102,10 +102,10 @@
   height: 320px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #00f7ff;
+  border: 4px solid var(--primary-color);
   box-shadow:
-    0 0 25px rgba(0, 247, 255, 0.3),
-    0 0 60px rgba(0, 247, 255, 0.2);
+    0 0 25px var(--glow-primary),
+    0 0 60px rgba(168, 85, 247, 0.2);
 }
 
 .image-box img {
@@ -120,9 +120,9 @@
   position: absolute;
   bottom: 280px;
   right: -20px;
-  background: rgba(8, 13, 25, 0.95);
+  background: rgba(8, 6, 20, 0.95);
   backdrop-filter: blur(10px);
-  border: 2px solid #00f7ff;
+  border: 2px solid var(--primary-color);
   color: #fff;
   padding: 10px 18px;
   border-radius: 18px;
@@ -130,8 +130,8 @@
   font-size: 14px;
   font-weight: 500;
   box-shadow: 
-    0 0 15px rgba(0, 247, 255, 0.3),
-    inset 0 0 10px rgba(0, 247, 255, 0.1);
+    0 0 15px var(--glow-primary),
+    inset 0 0 10px rgba(168, 85, 247, 0.15);
   z-index: 100;
   white-space: nowrap;
   opacity: 0;
@@ -147,7 +147,7 @@
   left: 20px;
   border-width: 10px 10px 0 0;
   border-style: solid;
-  border-color: #00f7ff transparent transparent transparent;
+  border-color: var(--primary-color) transparent transparent transparent;
   display: block;
   width: 0;
 }
@@ -159,36 +159,36 @@
 
 /* GLASS CARD STRUCTS */
 .glass-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(14, 10, 26, 0.4);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.08);
   border-radius: 20px;
   padding: 35px;
   box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.5),
-    inset 0 0 20px rgba(255, 255, 255, 0.01);
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    inset 0 0 20px rgba(168, 85, 247, 0.02);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 247, 255, 0.2);
+  border-color: rgba(168, 85, 247, 0.25);
   box-shadow: 
-    0 15px 35px rgba(0, 247, 255, 0.05),
-    inset 0 0 20px rgba(0, 247, 255, 0.01);
+    0 15px 35px rgba(168, 85, 247, 0.08),
+    inset 0 0 20px rgba(168, 85, 247, 0.02);
 }
 
 .panel-title {
   font-size: clamp(22px, 3vw, 30px);
-  color: #00f7ff;
+  color: var(--primary-color);
   margin-bottom: 25px;
   font-weight: 700;
-  text-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
+  text-shadow: 0 0 10px var(--glow-primary);
 }
 
 .speaker-btn {
   background: none;
   border: none;
-  color: #00f7ff;
+  color: var(--accent-color);
   cursor: pointer;
   font-size: 20px;
   margin-left: 12px;
@@ -198,7 +198,7 @@
 
 .speaker-btn:hover {
   transform: scale(1.2);
-  text-shadow: 0 0 10px #00f7ff;
+  text-shadow: 0 0 10px var(--accent-color);
 }
 
 /* ABOUT PANEL LAYOUT */
@@ -222,8 +222,8 @@
 }
 
 .stat-item {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(168, 85, 247, 0.04);
   padding: 15px;
   border-radius: 12px;
   text-align: center;
@@ -232,7 +232,7 @@
 
 .stat-item h4 {
   font-size: 24px;
-  color: #00f7ff;
+  color: var(--primary-color);
   margin-bottom: 5px;
 }
 
@@ -259,7 +259,7 @@
   gap: 20px;
   position: relative;
   padding-left: 20px;
-  border-left: 2px solid rgba(0, 247, 255, 0.2);
+  border-left: 2px solid rgba(168, 85, 247, 0.2);
 }
 
 .timeline-item {
@@ -273,14 +273,14 @@
   left: -27px;
   width: 12px;
   height: 12px;
-  background: #00f7ff;
+  background: var(--primary-color);
   border-radius: 50%;
-  box-shadow: 0 0 8px #00f7ff;
+  box-shadow: 0 0 8px var(--primary-color);
 }
 
 .timeline-item h5 {
   font-size: 16px;
-  color: #00f7ff;
+  color: var(--primary-color);
   margin-bottom: 5px;
 }
 
@@ -321,7 +321,7 @@
 .progress-bar-container {
   width: 100%;
   height: 18px;
-  background: #1e293b;
+  background: #110e20;
   border-radius: 50px;
   overflow: hidden;
 }
@@ -334,10 +334,10 @@
   padding-right: 12px;
   font-size: 11px;
   font-weight: 600;
-  background: #00f7ff;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   color: black;
   border-radius: 50px;
-  box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+  box-shadow: 0 0 10px var(--glow-primary);
 }
 
 /* Width fills defined dynamically */
@@ -367,8 +367,8 @@
 }
 
 .project-item {
-  background: rgba(255,255,255,0.01);
-  border: 1px solid rgba(255,255,255,0.03);
+  background: rgba(14, 10, 26, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.04);
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -376,14 +376,14 @@
 
 .project-item:hover {
   transform: translateY(-8px);
-  border-color: rgba(0, 247, 255, 0.3);
+  border-color: rgba(168, 85, 247, 0.25);
 }
 
 .project-item img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.05);
 }
 
 .project-info {
@@ -405,9 +405,9 @@
 }
 
 .tech-tag {
-  background: rgba(0, 247, 255, 0.05);
-  color: #00f7ff;
-  border: 1px solid rgba(0, 247, 255, 0.1);
+  background: rgba(168, 85, 247, 0.05);
+  color: var(--primary-color);
+  border: 1px solid rgba(168, 85, 247, 0.15);
   padding: 3px 8px;
   font-size: 11px;
   border-radius: 50px;
@@ -421,7 +421,7 @@
 }
 
 .proj-btn-primary {
-  color: #00f7ff;
+  color: var(--accent-color);
   font-size: 14px;
   font-weight: 500;
   text-decoration: underline;
@@ -430,7 +430,7 @@
 
 .proj-btn-primary:hover {
   color: #fff;
-  text-shadow: 0 0 8px rgba(0, 247, 255, 0.3);
+  text-shadow: 0 0 8px var(--accent-color);
 }
 
 /* SERVICES PANEL LAYOUT */
@@ -450,8 +450,8 @@
 }
 
 .service-item {
-  background: rgba(255,255,255,0.01);
-  border: 1px solid rgba(255,255,255,0.03);
+  background: rgba(14, 10, 26, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.04);
   padding: 25px;
   border-radius: 15px;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -459,12 +459,12 @@
 
 .service-item:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 247, 255, 0.3);
+  border-color: rgba(168, 85, 247, 0.25);
 }
 
 .service-item h3 {
   font-size: 18px;
-  color: #00f7ff;
+  color: var(--primary-color);
   margin-bottom: 12px;
 }
 
@@ -504,7 +504,7 @@
 }
 
 .detail-item strong {
-  color: #00f7ff;
+  color: var(--primary-color);
   font-size: 14px;
   display: block;
   margin-bottom: 5px;
@@ -521,8 +521,8 @@
 }
 
 .social-btn {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(168, 85, 247, 0.05);
   color: #e2e8f0;
   padding: 6px 12px;
   border-radius: 8px;
@@ -531,9 +531,9 @@
 }
 
 .social-btn:hover {
-  border-color: #00f7ff;
-  color: #00f7ff;
-  box-shadow: 0 0 10px rgba(0, 247, 255, 0.1);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 10px var(--glow-primary);
 }
 
 .contact-form {
@@ -546,8 +546,8 @@
 .contact-form textarea {
   width: 100%;
   padding: 15px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(168, 85, 247, 0.05);
   border-radius: 10px;
   color: #fff;
   font-family: inherit;
@@ -558,8 +558,8 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #00f7ff;
-  box-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px var(--glow-primary);
 }
 
 .contact-form textarea {
@@ -582,7 +582,7 @@
 
 #github-stats-panel h3 {
   font-size: 24px;
-  color: #00f7ff;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 

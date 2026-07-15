@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #a855f7;   /* Electric Violet */
-  --accent-color: #c084fc;    /* Glowing Lavender (No Ice Blue) */
-  --bg-dark: #05040a;         /* Deep Midnight Purple/Black */
+  --primary-color: #00cc66;   /* Neon Green */
+  --accent-color: #10b981;    /* Emerald Jade */
+  --bg-dark: #080808;         /* Matte Pitch Black */
   --text-main: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.7);
-  --glow-primary: rgba(168, 85, 247, 0.4);
-  --glow-accent: rgba(192, 132, 252, 0.4);
+  --glow-primary: rgba(0, 204, 102, 0.35);
+  --glow-accent: rgba(16, 185, 129, 0.35);
 }
 
 *{

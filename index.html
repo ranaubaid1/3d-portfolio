@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ubaid Abid | Portfolio</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+</script>
+<script type="module" src="javascript/robot.js"></script>
+</head>
+
+<body>
+  <div class="cursor"></div>
+  
+  <!-- BACKGROUND 3D CANVAS -->
+  <canvas id="three-canvas"></canvas>
+
+
+  <!-- FIXED NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Ubaid Abid</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <div class="menu-btn" id="menuBtn">☰</div>
+  </nav>
+
+  <!-- INTERACTIVE GLASSMORPHIC PANELS CONTAINER -->
+  <div id="panels-container">
+
+    <!-- HOME SECTION -->
+    <section id="home-panel" class="panel active">
+      <div class="hero-content">
+        <h3>Hello, I'm</h3>
+        <div class="hero-title-wrapper">
+          <h1>Ubaid Abid</h1>
+          <div id="text-robot-container"></div>
+        </div>
+        <h2 id="typing"></h2>
+        <p>Passionate Software Engineering student focused on building scalable web applications, AI-powered solutions, and workflow automations — turning ideas into code and automating the future.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn nav-btn" data-section="contact">Hire Me</a>
+          <a href="assets/Ubaid-Abid-CV.pdf" download class="btn-outline">Download CV</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Circular frame rests behind the 3D WebGL model overlay -->
+        <div class="image-box">
+          <img src="assets/profile.jpg" alt="Ubaid Abid">
+        </div>
+        <div id="robot-speech-bubble" class="speech-bubble">Welcome! 👋</div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about-panel" class="panel">
+      <div class="glass-card about-card">
+        <h2 class="panel-title">About Me <button class="speaker-btn" onclick="readCardContent(this)" title="Read out loud">🔊</button></h2>
+        <h3>Software Engineer & Automation Specialist</h3>
+        <p>
+            I am Ubaid Abid, a Software Engineering student at The University of Lahore (Session: Fall 2023 – 2027) passionate about building scalable web applications, AI-powered solutions, and workflow automations — turning ideas into code and automating the future, one workflow at a time.
+        </p>
+        
+        <div class="stats-row">
+            <div class="stat-item">
+                <h4>20+</h4>
+                <p>Projects</p>
+            </div>
+            <div class="stat-item">
+                <h4>2+</h4>
+                <p>Years Learning</p>
+            </div>
+            <div class="stat-item">
+                <h4>100%</h4>
+                <p>Passion</p>
+            </div>
+        </div>
+
+        <div class="about-bullets">
+            <ul>
+                <li>Currently learning Python, Django, JavaScript, Node.js, and n8n</li>
+                <li>Interested in AI, Automation, Full-Stack Development, and Open Source</li>
+                <li>Building intelligent workflows with n8n and integrating APIs to automate real-world tasks</li>
+                <li>Enjoy creating practical software solutions that improve productivity and solve real-world problems</li>
+                <li>Open to internships, collaborations, and open-source contributions</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="glass-card timeline-card">
+        <h2 class="panel-title">Journey <button class="speaker-btn" onclick="readCardContent(this)" title="Read out loud">🔊</button></h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h5>Fall 2023</h5>
+            <p>Started BS Software Engineering at The University of Lahore</p>
+          </div>
+          <div class="timeline-item">
+            <h5>2024</h5>
+            <p>Learned Python, C++, and Core Web Development</p>
+          </div>
+          <div class="timeline-item">
+            <h5>2025</h5>
+            <p>Python & Django Automation Development (Discord Bots, Web Monitors)</p>
+          </div>
+          <div class="timeline-item">
+            <h5>2026</h5>
+            <p>Building Capstone AI Audio Forensic capstone & advanced n8n integrations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills-panel" class="panel">
+      <div class="glass-card skills-card">
+        <h2 class="panel-title">Technical Skills <button class="speaker-btn" onclick="readCardContent(this)" title="Read out loud">🔊</button></h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <span>Python</span>
+            <div class="progress-bar-container"><div class="progress-fill python">95%</div></div>
+          </div>
+          <div class="skill-item">
+            <span>Django</span>
+            <div class="progress-bar-container"><div class="progress-fill django">90%</div></div>
+          </div>
+          <div class="skill-item">
+            <span>C++</span>
+            <div class="progress-bar-container"><div class="progress-fill cpp">85%</div></div>
+          </div>
+          <div class="skill-item">
+            <span>JavaScript</span>
+            <div class="progress-bar-container"><div class="progress-fill js">90%</div></div>
+          </div>
+          <div class="skill-item">
+            <span>n8n Automation</span>
+            <div class="progress-bar-container"><div class="progress-fill n8n">90%</div></div>
+          </div>
+          <div class="skill-item">
+            <span>Playwright Scraping</span>
+            <div class="progress-bar-container"><div class="progress-fill playwright">85%</div></div>
+          </div>
+          <div class="skill-item">
+            <span>MySQL & Databases</span>
+            <div class="progress-bar-container"><div class="progress-fill db">80%</div></div>
+          </div>
+          <div class="skill-item">
+            <span>Git & GitHub</span>
+            <div class="progress-bar-container"><div class="progress-fill git">85%</div></div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 30px; margin-bottom: 15px; color: #00f7ff; text-align: center;">Tech Stack Badges</h3>
+        <div class="badges-row" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+          <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white" alt="C++">
+          <img src="https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54" alt="Python">
+          <img src="https://img.shields.io/badge/django-%23092E20.svg?style=flat&logo=django&logoColor=white" alt="Django">
+          <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white" alt="HTML5">
+          <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=flat&logo=mysql&logoColor=white" alt="MySQL">
+          <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=flat&logo=Canva&logoColor=white" alt="Canva">
+          <img src="https://img.shields.io/badge/numpy-%23013243.svg?style=flat&logo=numpy&logoColor=white" alt="NumPy">
+          <img src="https://img.shields.io/badge/-playwright-%232EAD33?style=flat&logo=playwright&logoColor=white" alt="Playwright">
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects-panel" class="panel">
+      <div class="glass-card projects-card">
+        <h2 class="panel-title" style="text-align: center; margin-bottom: 30px;">Featured Projects <button class="speaker-btn" onclick="readCardContent(this)" title="Read out loud">🔊</button></h2>
+        <div class="projects-grid">
+          
+          <div class="project-item">
+            <img src="assets/projects/audio_forensics.jpg" alt="Audio Forensic Capstone">
+            <div class="project-info">
+              <h3>AI Audio Forensics</h3>
+              <p>AI-driven forensic Capstone capstone project designed to analyze audio evidence and support crime investigations.</p>
+              <span class="tech-tag">TensorFlow</span> <span class="tech-tag">Python</span> <span class="tech-tag">Librosa</span>
+              <div class="proj-btns">
+                <a href="#" class="proj-btn-primary">Closed Source</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <img src="assets/projects/upwork_bot.jpg" alt="Upwork Bot">
+            <div class="project-info">
+              <h3>Upwork Job Monitor</h3>
+              <p>Policy-compliant browser monitoring system delivering real-time Discord notifications for active jobs.</p>
+              <span class="tech-tag">Playwright</span> <span class="tech-tag">GraphQL</span> <span class="tech-tag">SQLAlchemy</span>
+              <div class="proj-btns">
+                <a href="#" class="proj-btn-primary">Discord Bot</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <img src="assets/projects/yt_downloader.jpg" alt="YouTube Downloader">
+            <div class="project-info">
+              <h3>YT Playlist Downloader</h3>
+              <p>Web automation application supporting playlist downloading, progress updates, and MP4/MP3 extraction.</p>
+              <span class="tech-tag">Django</span> <span class="tech-tag">Python</span> <span class="tech-tag">yt-dlp</span>
+              <div class="proj-btns">
+                <a href="https://github.com/ranaubaid1/Yt-video-downloader" target="_blank" class="proj-btn-primary">GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services-panel" class="panel">
+      <div class="glass-card services-card">
+        <h2 class="panel-title" style="text-align: center; margin-bottom: 30px;">My Services <button class="speaker-btn" onclick="readCardContent(this)" title="Read out loud">🔊</button></h2>
+        <div class="services-list-grid">
+          <div class="service-item">
+            <h3>Web Development</h3>
+            <p>Responsive, modern frontends and full-stack web applications using HTML, CSS, JavaScript, and Bootstrap.</p>
+          </div>
+          <div class="service-item">
+            <h3>Django Web Apps</h3>
+            <p>Robust, secure, and highly scalable custom web applications built with Python and Django.</p>
+          </div>
+          <div class="service-item">
+            <h3>Workflow Automation</h3>
+            <p>Automating complex business processes and routine tasks using intelligent n8n workflows and REST APIs.</p>
+          </div>
+          <div class="service-item">
+            <h3>Browser Automation</h3>
+            <p>Fast and reliable browser automation, web scrapers, and monitor bots developed with Python and Playwright.</p>
+          </div>
+          <div class="service-item">
+            <h3>API Integrations</h3>
+            <p>Connecting platforms, data flows, and implementing custom GraphQL and REST APIs.</p>
+          </div>
+          <div class="service-item">
+            <h3>Database Management</h3>
+            <p>Structured data storage, schemas, and queries using databases like MySQL, SQLite, and SQLAlchemy ORM.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact-panel" class="panel">
+      <div class="glass-card contact-info-card">
+        <h2 class="panel-title">Let's Connect <button class="speaker-btn" onclick="readCardContent(this)" title="Read out loud">🔊</button></h2>
+        <p>Feel free to reach out for workflow automations, custom API integrations, Python/Django backend systems, or open-source collaborations.</p>
+        
+        <div class="contact-details">
+          <div class="detail-item">
+            <strong>Email</strong>
+            <p>ranaubaid934@gmail.com</p>
+          </div>
+          <div class="detail-item">
+            <strong>Phone</strong>
+            <p>+92 3274790132</p>
+          </div>
+          <div class="detail-item">
+            <strong>Location</strong>
+            <p>Pakistan, Lahore</p>
+          </div>
+          <div class="detail-item">
+            <strong>Connect</strong>
+            <div class="social-links-row" style="margin-top: 5px;">
+              <a href="https://www.linkedin.com/in/rana-ubaid-53013a294/" target="_blank" class="social-btn">LinkedIn</a>
+              <a href="https://instagram.com/ubaid_rana_1" target="_blank" class="social-btn">Instagram</a>
+              <a href="https://github.com/ranaubaid1" target="_blank" class="social-btn">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card contact-form-card">
+        <h2 class="panel-title">Message Me <button class="speaker-btn" onclick="readCardContent(this)" title="Read out loud">🔊</button></h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <input type="text" placeholder="Subject" required>
+          <textarea placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- GITHUB VISUAL STATS PANEL (FLOATS ON HOMEPAGE) -->
+  <section class="github-stats-section" id="github-stats-panel">
+    <h3>GitHub Activity</h3>
+    <div class="stats-cards-container">
+      <img src="https://github-readme-stats.shion.dev/api?username=ranaubaid1&theme=dark&hide_border=false&include_all_commits=true&count_private=true" alt="GitHub Stats">
+      <img src="https://streak-stats.demolab.com/?user=ranaubaid1&theme=dark&hide_border=false" alt="GitHub Streak">
+      <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=ranaubaid1&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact" alt="Top Languages">
+    </div>
+  </section>
+
+  <footer>
+    <h3>Ubaid Abid</h3>
+    <p>Software Engineer | Automation Specialist</p>
+    <p>© 2026 All Rights Reserved</p>
+  </footer>
+
+  <script src="javascript/main.js"></script>
+  <script src="javascript/home.js"></script>
+  <script src="javascript/cursor.js"></script>
+</body>
+</html>

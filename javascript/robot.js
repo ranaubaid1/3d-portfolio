@@ -75,7 +75,7 @@ function init3DEngine() {
     scene.add(directionalLight);
 
     // Orbiting Spotlight Colors (casting dynamic metallic specular highlights on the robot)
-    const cyanLight = new THREE.PointLight(0x00f7ff, 7, 12); // Ice Blue accent
+    const cyanLight = new THREE.PointLight(0xc084fc, 7, 12); // Lavender accent
     scene.add(cyanLight);
 
     const magentaLight = new THREE.PointLight(0xa855f7, 7, 12); // Electric Violet primary

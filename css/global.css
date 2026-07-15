@@ -1,11 +1,11 @@
 :root {
   --primary-color: #a855f7;   /* Electric Violet */
-  --accent-color: #00f7ff;    /* Ice Blue / Cyan */
-  --bg-dark: #07070e;         /* Deep Cyber Black */
+  --accent-color: #c084fc;    /* Glowing Lavender (No Ice Blue) */
+  --bg-dark: #05040a;         /* Deep Midnight Purple/Black */
   --text-main: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.7);
   --glow-primary: rgba(168, 85, 247, 0.4);
-  --glow-accent: rgba(0, 247, 255, 0.4);
+  --glow-accent: rgba(192, 132, 252, 0.4);
 }
 
 *{

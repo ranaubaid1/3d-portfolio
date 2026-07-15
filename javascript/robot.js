@@ -31,8 +31,10 @@ function showBubble(text, duration = 3000) {
     mainBubble.textContent = text;
     mainBubble.classList.add("show");
     
-    // Speak bubble aloud
-    speakText(text);
+    // Speak bubble aloud (skip progress updates to avoid annoying loop audio spam)
+    if (!text.includes("Loading 3D")) {
+        speakText(text);
+    }
     
     if (bubbleTimeout) clearTimeout(bubbleTimeout);
     bubbleTimeout = setTimeout(() => {
@@ -215,7 +217,25 @@ function init3DEngine() {
                 showBubble("Welcome to Ubaid's 3D Portfolio! 🚀", 4000);
             }, 500);
         },
-        undefined,
+        function (xhr) {
+            if (xhr.total > 0) {
+                const percent = Math.round((xhr.loaded / xhr.total) * 100);
+                if (!robot && percent < 100) {
+                    if (mainBubble) {
+                        mainBubble.textContent = `Loading 3D Companion: ${percent}%... 🤖`;
+                        mainBubble.classList.add("show");
+                    }
+                }
+            } else {
+                // Fallback for missing Content-Length header
+                if (!robot) {
+                    if (mainBubble) {
+                        mainBubble.textContent = "Downloading 3D assets... 🤖";
+                        mainBubble.classList.add("show");
+                    }
+                }
+            }
+        },
         function (error) {
             console.error("Robot Loading Error:", error);
         }
